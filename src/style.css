@@ -1,0 +1,48 @@
+/* Container Layout */
+.container {
+  display: flex;
+  height: 100vh;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Left Section */
+.left-section {
+  width: 30%;
+  border-right: 2px solid #ddd;
+  padding-right: 20px;
+}
+
+.option-container {
+  margin-bottom: 10px;
+}
+
+/* Clickable Option */
+.option-title {
+  cursor: pointer;
+  padding: 10px;
+  background: #f0f0f0;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.option-title:hover {
+  background: #e0e0e0;
+}
+
+/* Selected Option Details */
+.option-details {
+  font-weight: bold;
+  color: #555;
+}
+
+/* Right Section */
+.right-section {
+  width: 70%;
+}
+
+/* Image */
+.option-image {
+  width: 300px;
+  border-radius: 10px;
+}
