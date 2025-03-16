@@ -157,28 +157,14 @@
 .how-it-works-second-div {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  margin-top: 50px;
+  width: 100%;
 }
 
-.how-it-works-second-div-first-grid {
+.how-it-works-second-div-grid {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 10px;
-}
-
-.mood-analysation {
-  color: var(--gray);
-  padding: 15px 20px;
-  cursor: pointer;
-}
-
-.mood-analysation h3 {
-  font-size: var(--large);
-}
-
-.mood-analysation p {
-  display: none;
 }
 
 /* footer  */

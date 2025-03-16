@@ -48,6 +48,12 @@ li,
 ul {
   list-style: none;
   text-decoration: none;
+  cursor: pointer;
+}
+
+a {
+  color: var(--black);
+  transition: color 0.3s ease;
 }
 
 html,
@@ -57,6 +63,7 @@ body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.5;
   background-color: var(--white);
+  background-image: url("./assets/ag-square.png");
 }
 
 button {
@@ -81,11 +88,13 @@ button {
   background-color: var(--white2);
   border-radius: 15px;
   cursor: pointer;
+  transition: all 1s ease-in;
+  height: 100px;
 }
 
 .mood-card h3 {
   color: var(--black);
-  font-size: var(--large);
+  font-size: var(--medium);
 }
 
 .mood-card p {

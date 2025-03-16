@@ -5,6 +5,7 @@ import { UpRightArrow, Menu } from "../../common/Icons";
 import MoodPic from "../../assets/mood2.png";
 import AOS from "aos";
 import MoodCard from "../../common/MoodCard";
+import FooterMenuItem from "../../common/FooterMenuItems";
 
 export default function Home() {
   AOS.init({
@@ -87,9 +88,14 @@ export default function Home() {
         <p>...Your personal music recommendator</p>
         <div className="hero-btns">
           <Button buttonClass={"hero-first-btn"} text={"Features"} />
-          <Button buttonClass={"hero-second-btn"} text={"Know how it works"} />
+          <Button
+            buttonOnclick={() => scrollToSection(aboutRef)}
+            buttonClass={"hero-second-btn"}
+            text={"Know how it works"}
+          />
         </div>
       </div>
+      <div className="feature-container"></div>
       <div ref={aboutRef} className="how-it-works-container">
         <div className="how-it-works-first-div">
           <div className="how-it-works-first-div-first-grid">
@@ -108,105 +114,61 @@ export default function Home() {
           </div>
         </div>
         <div className="how-it-works-second-div">
-          <div className="how-it-works-second-div-first-grid">
-            {["1", "2", "3", "4"].map((id) =>
-              selectedOption === id ? (
-                <div
-                  key={id}
-                  className="mood-analysation"
-                  onClick={() => setSelectedOption(null)}
-                >
-                  <h3>
-                    {id === "1" && "01. Data Collection"}
-                    {id === "2" && "02. Data Analysis"}
-                    {id === "3" && "03. Playlist Recommendations"}
-                    {id === "4" && "04. Happy User"}
-                  </h3>
-                  <p>
-                    {id === "1" && "Gets moods from users"}
-                    {id === "2" && "Analyzes user moods"}
-                    {id === "3" &&
-                      "Recommends a playlist based on users' moods"}
-                    {id === "4" && "Elevates users' moods"}
-                  </p>
-                </div>
-              ) : (
-                <MoodCard
-                  key={id}
-                  onClick={() => setSelectedOption(id)}
-                  text={
-                    id === "1"
-                      ? "01. Data Collection"
-                      : id === "2"
-                      ? "02. Data Analysis"
-                      : id === "3"
-                      ? "03. Playlist Recommendations"
-                      : "04. Happy User"
-                  }
-                  description={
-                    id === "1"
-                      ? "Gets moods from users"
-                      : id === "2"
-                      ? "Analyzes user moods"
-                      : id === "3"
-                      ? "Recommends a playlist based on users' moods"
-                      : "Elevates users' moods"
-                  }
-                />
-              )
-            )}
+          <div className="how-it-works-second-div-grid">
+            <MoodCard
+              text={"01. Data Collection"}
+              description={"Gets moods from users"}
+            />
+            <MoodCard
+              text={"03. Playlist Recommendations"}
+              description={"Recommends a playlist based on users' moods"}
+            />
           </div>
-          <div>
-            <div className="how-it-works-first-div-first-grid">
-              <Button
-                buttonClass={"how-m2m-works-button"}
-                text={"How It Works"}
-              />
-              <h2 className="how-m2m-works">How m2m Works</h2>
-            </div>
-            <div className="how-it-works-first-div-second-grid">
-              <p>
-                {" "}
-                Get your your mood lit up with exceptional playlist tailored
-                just for you.
-              </p>
-            </div>
+          <div className="how-it-works-second-div-grid">
+            <MoodCard
+              text={"02. Data Analysis"}
+              description={"Analyzes user moods"}
+            />
+            <MoodCard
+              text={"04. Happy User"}
+              description={"Elevates users' moods"}
+            />
           </div>
         </div>
       </div>
+      <div className="contact-conatiner"></div>
       <footer ref={contactRef} id="footer">
         <div className="foot-menu-container">
-          <div>
-            <h4>Quick Links</h4>
-            <ul>
-              <li onClick={() => scrollToSection(homeRef)}>Home</li>
-              <li onClick={() => scrollToSection(aboutRef)}>About</li>
-              <li onClick={() => scrollToSection(contactRef)}>Contact</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Legal Links</h4>
-            <ul>
-              <li>Terms Of Service</li>
-              <li>Privacy Policy</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Support and Contact</h4>
-            <ul>
-              <li>Email Support</li>
-              <li>Phone Support</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Stay Connected</h4>
-            <ul>
-              <li>X</li>
-              <li>LinkedIn</li>
-              <li>Youtube</li>
-              <li>Facebook</li>
-            </ul>
-          </div>
+          <FooterMenuItem
+            title={"Quick Links"}
+            first={"Home"}
+            firstClick={() => scrollToSection(homeRef)}
+            second={"About"}
+            secondClick={() => scrollToSection(aboutRef)}
+            third={"Contact"}
+            thirdClick={() => scrollToSection(contactRef)}
+          />
+          <FooterMenuItem
+            title={"Legal Links"}
+            first={"Terms Of Services"}
+            second={"Privacy Policy"}
+          />
+          <FooterMenuItem
+            title={"Support and Contact"}
+            first={"Email Support"}
+            second={"Phone Support"}
+          />
+          <FooterMenuItem
+            title={"Stay Connected"}
+            first={"X"}
+            firstLink={"https://x.com/VictoryOseiwe"}
+            second={"LinkedIn"}
+            secondLink={"https://linkedin.com/in/victoryoseiwe"}
+            third={"Youtube"}
+            thirdLink={"http://www.youtube.com/@victory.oseiwe"}
+            fourth={"Facebook"}
+            fourthLink={"https://www.facebook.com/InveztorForum/"}
+          />
         </div>
         <hr />
         <div className="m2m">MOOD2MUSIC</div>
